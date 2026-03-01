@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(90deg, #1c1b22, #141318);
+    font-family: sans-serif;
+}
+
+.app {
+    width: 77rem;
+    height: 40rem;
+    top: 6rem;
+    left: 1rem;
+    margin: 25px auto;
+}
+
+.tabs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pill-list {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    margin: 0;
+    padding: 6px;
+    background: #1f1c33;
+    border-radius: 9999px;
+}
+
+.pill-list > li {
+    display: flex;
+}
+
+.pill {
+    height: 42px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 9999px;
+    background: #2b2840;
+    color: #bbb;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.25s ease;
+}
+
+.pill:hover {
+    color: white;
+}
+
+.pill.is-active {
+    color: white;
+}
+
+.indicator {
+    position: absolute;
+    height: 42px;
+    background: #4c4766;
+    border-radius: 9999px;
+    top: 6px;
+    left: 6px;
+    z-index: 1;
+    transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), width 0.3s ease;
+}
+
+.menu-selection {
+    flex: 1;
+    background: #3a3553;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-content {
+    flex: 5;
+    background: #3a3553;
+    border-radius: 16px;
+    position: relative;
+}
+
+.menu-selection button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #4b4570;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-align: left;
+}
+
+.menu-selection button:hover {
+    background: #5c5588;
+}
+
+.menu-selection button.active {
+    background: #6c63ff;
+}
+
+.menu-content > button {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.menu-content > button:hover {
+    opacity: 0.85;
+}

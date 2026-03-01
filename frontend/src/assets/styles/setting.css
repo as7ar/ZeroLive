@@ -1,0 +1,63 @@
+.setting {
+    margin-top: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setting label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: #e0e0ff;
+}
+
+.setting input[type="text"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #2c2840;
+    color: white;
+    width: 300px;
+}
+
+.setting input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #6c63ff;
+}
+
+.setting input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 2px solid #6c63ff;
+    background: #2c2840;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+}
+
+.setting input[type="checkbox"]:checked {
+    background: #6c63ff;
+}
+
+.setting input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.setting input[type="checkbox"]:hover {
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.25);
+}

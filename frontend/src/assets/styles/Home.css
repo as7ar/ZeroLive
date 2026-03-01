@@ -1,0 +1,11 @@
+.left-box {
+    flex: 3;
+    background: #3a3553;
+    border-radius: 16px;
+}
+
+.right-box {
+    flex: 1;
+    background: #3a3553;
+    border-radius: 16px;
+}
