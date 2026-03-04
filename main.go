@@ -36,6 +36,6 @@ func main() {
 	})
 
 	if err != nil {
-		println("Error:", err.Error())
+		fmt.Println("Error:", err.Error())
 	}
 }

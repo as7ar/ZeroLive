@@ -23,7 +23,7 @@ export function SettingPage() {
 
     const platforms = [
         { key: "chzzk", label: "치지직", placeholder: "채널 아이디" },
-        { key: "soop", label: "숲", placeholder: "채널 아이디" },
+        { key: "soop", label: "숲", placeholder: "스트리머 아이디" },
         { key: "weflab", label: "위플랩", placeholder: "도우미 아이디" },
     ] as const
 
@@ -82,7 +82,8 @@ export function SettingPage() {
                 )}
                 {settingTabs=="account" && (
                     <div className={"setting"}>
-
+                        <div className={"account_id"}>계정 아이디: <a>{settings.account.id}</a></div>
+                        <div classNam={"account_name"}>계정 이름: <a>{settings.account.nickname}</a></div>
                     </div>
                 )}
                 <button onClick={handleSave}>저장</button>
