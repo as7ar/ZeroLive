@@ -61,3 +61,14 @@
 .setting input[type="checkbox"]:hover {
     box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.25);
 }
+
+.account_name,
+.account_id {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #5b527f;
+    color: white;
+    width: fit-content;
+}

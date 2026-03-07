@@ -4,3 +4,4 @@ frontend/dist
 .idea/
 **/*.exe
 *.exe
+!**/golive.exe

@@ -13,7 +13,6 @@ export function SettingPage() {
         await SaveSetting(settings)
     }
 
-
     useEffect(() => {
         GetSetting().then((res) => {
             const s = main.Settings.createFrom(res)
@@ -82,8 +81,12 @@ export function SettingPage() {
                 )}
                 {settingTabs=="account" && (
                     <div className={"setting"}>
-                        <div className={"account_id"}>계정 아이디: <a>{settings.account.id}</a></div>
-                        <div classNam={"account_name"}>계정 이름: <a>{settings.account.nickname}</a></div>
+                        <div className={`account_id`}>
+                            계정 아이디: <a className={settings?.account ? "verified" : "unknown"}>{settings?.account?.id || "알 수 없음"}</a>
+                        </div>
+                        <div className={`account_name`}>
+                            계정 이름: <a className={settings?.account ? "verified" : "unknown"}>{settings?.account?.nickname || "알 수 없음"}</a>
+                        </div>
                     </div>
                 )}
                 <button onClick={handleSave}>저장</button>

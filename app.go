@@ -34,6 +34,7 @@ type GeneralSetting struct {
 }
 
 type LiveSetting struct {
+	Chat   bool   `json:"chat"`
 	Chzzk  string `json:"chzzk"`
 	Soop   string `json:"soop"`
 	Weflab string `json:"weflab"`

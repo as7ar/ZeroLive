@@ -27,6 +27,7 @@ export namespace main {
 	    }
 	}
 	export class LiveSetting {
+	    chat: boolean;
 	    chzzk: string;
 	    soop: string;
 	    weflab: string;
@@ -37,6 +38,7 @@ export namespace main {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.chat = source["chat"];
 	        this.chzzk = source["chzzk"];
 	        this.soop = source["soop"];
 	        this.weflab = source["weflab"];
