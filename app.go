@@ -121,3 +121,21 @@ func SetAutoRun(enable bool) error {
 
 	return key.DeleteValue("ZeroLive")
 }
+
+/*func StartGoLive() bool {
+	exe, err := os.Executable()
+	if err != nil {
+		return false
+	}
+
+	dir := filepath.Dir(exe)
+	target := filepath.Join(dir, "backend", "golive.exe")
+
+	cmd := exec.Command(target)
+	cmd.SysProcAttr = &syscall.SysProcAttr{
+		HideWindow: false,
+	}
+	err = cmd.Start()
+	return err == nil
+}
+*/

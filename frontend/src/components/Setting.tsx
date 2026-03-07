@@ -58,6 +58,24 @@ export function SettingPage() {
                 )}
                 {settingTabs=="live" && (
                     <div className={"setting"}>
+                        <label>
+                            <span>채팅 보기</span>
+                            <input
+                                type={"checkbox"}
+                                checked={settings?.live?.chat ?? false}
+                                onChange={(e) => {
+                                    if (!settings) return
+                                    const updated = {
+                                        ...settings,
+                                        live: {
+                                            ...settings.live,
+                                            chat: e.target.checked
+                                        }
+                                    }
+                                    setSettings(main.Settings.createFrom(updated))
+                                }}
+                            ></input>
+                        </label>
                         {platforms.map((p)=> (
                             <label key={p.key}>{p.label} {p.placeholder}
                                 <input
