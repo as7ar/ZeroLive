@@ -80,7 +80,7 @@ export function SettingPage() {
                             <label key={p.key}>{p.label} {p.placeholder}
                                 <input
                                     type={"text"}
-                                    content={settings?.live?.[p.key]}
+                                    value={settings?.live?.[p.key]}
                                     onChange={(e)=> {
                                         if (!settings) return
                                         const updated = {
