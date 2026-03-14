@@ -134,6 +134,7 @@ func (a *App) GetLiveStatus(platform Platforms, id string) (bool, error) {
 
 	switch platform {
 	case "soop":
+		return false, nil
 		r, err := parseSoopState(id)
 		if err != nil {
 			fmt.Println(err)
@@ -149,8 +150,11 @@ func (a *App) GetLiveStatus(platform Platforms, id string) (bool, error) {
 
 		status := r["content"].(map[string]interface{})["status"].(string)
 		return status == "OPEN", nil
+	case "weflab":
+		return false, nil
+	default:
+		return false, nil
 	}
-	return false, fmt.Errorf("unknown platform")
 }
 
 func isProcessRunning(name string) bool {

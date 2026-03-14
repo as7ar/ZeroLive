@@ -92,13 +92,13 @@ export default function HomeLive() {
                 <button onClick={loadStatus}>새로고침</button>
             </div>
             <div className={"chat-menu"} onLoad={StartGoLive}>
-                <button className={"chat-type all"} onClick={()=> setChatType("all")}>모두</button>
-                <button className={"chat-type chzzk"} onClick={()=> setChatType("chzzk")}>치지직</button>
-                <button className={"chat-type soop"} onClick={()=> setChatType("soop")}>숲</button>
-                <button className={"chat-type weflab"} onClick={()=> setChatType("weflab")}>위플랩</button>
+                <button className={`chat-type all ${chatType=="all" ? "active" : ""}`} onClick={()=> setChatType("all")}>모두</button>
+                <button className={`chat-type chzzk ${chatType=="chzzk" ? "active" : ""}`} onClick={()=> setChatType("chzzk")}>치지직</button>
+                <button className={`chat-type soop ${chatType=="soop" ? "active" : ""}`} onClick={()=> setChatType("soop")}>숲</button>
+                <button className={`chat-type weflab ${chatType=="weflab" ? "active" : ""}`} onClick={()=> setChatType("weflab")}>위플랩</button>
             </div>
             <div className={"chat"}>
-                <Chat urls={alertPlatforms} chatType={chatType}/>
+                <Chat urls={alertPlatforms} chatType={chatType} onlyDonation={false}/>
             </div>
         </div>
     )

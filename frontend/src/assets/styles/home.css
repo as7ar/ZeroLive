@@ -92,8 +92,8 @@
 }
 
 .msg.weflab {
-    background: rgba(255, 180, 80, 0.15);
-    border-left: 4px solid #ffb450;
+    background: rgba(34, 68, 255, 0.15);
+    border-left: 4px solid #4a7dfe;
 }
 
 .msg.soop {
@@ -106,6 +106,14 @@
     border-left: 4px solid #00ff96;
 }
 
+.msg.donation {
+
+}
+
 .msg b {
     margin-right: 6px;
+}
+
+.chat-menu button.active {
+    background: #605d8d;
 }

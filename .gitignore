@@ -5,3 +5,4 @@ frontend/dist
 **/*.exe
 *.exe
 !**/golive.exe
+/frontend/vite.config.ts.timestamp-1773488729683.mjs

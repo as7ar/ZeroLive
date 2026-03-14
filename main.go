@@ -2,8 +2,13 @@ package main
 
 import (
 	"embed"
+	"flag"
 	"fmt"
+	"net/http"
 
+	"github.com/as7ar/ZeroLive/backend/chzzk"
+	"github.com/as7ar/ZeroLive/backend/soop"
+	"github.com/as7ar/ZeroLive/backend/weflab"
 	"github.com/joho/godotenv"
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
@@ -18,6 +23,21 @@ func main() {
 	if err != nil {
 		fmt.Println("Error loading .env file")
 	}
+
+	port := *flag.String("port", "8080", "")
+	flag.Parse()
+
+	http.HandleFunc("/api/weflab", weflab.WeflabHandler)
+	http.HandleFunc("/api/chzzk", chzzk.ChzzkHandler)
+	http.HandleFunc("/api/soop", soop.SoopHandler)
+
+	go func() {
+		fmt.Println("server started on :" + port)
+		err := http.ListenAndServe(":"+port, nil)
+		if err != nil {
+			fmt.Println(err)
+		}
+	}()
 
 	app := NewApp()
 
